@@ -1,0 +1,63 @@
+{
+  "accuracy": 1.0,
+  "macro_precision": 1.0,
+  "macro_recall": 1.0,
+  "macro_f1": 1.0,
+  "weighted_f1": 1.0,
+  "per_class": {
+    "neutral": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 19
+    },
+    "toxic": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 18
+    },
+    "hate_speech": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 19
+    },
+    "offensive": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 19
+    }
+  },
+  "confusion_matrix": [
+    [
+      19,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      18,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      19,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      19
+    ]
+  ],
+  "model": "tfidf_logistic_regression",
+  "train_samples": 350,
+  "test_samples": 75,
+  "classification_report_text": "              precision    recall  f1-score   support\n\n     neutral       1.00      1.00      1.00        19\n       toxic       1.00      1.00      1.00        18\n hate_speech       1.00      1.00      1.00        19\n   offensive       1.00      1.00      1.00        19\n\n    accuracy                           1.00        75\n   macro avg       1.00      1.00      1.00        75\nweighted avg       1.00      1.00      1.00        75\n"
+}

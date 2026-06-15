@@ -1,0 +1,27 @@
+{"timestamp": "2026-06-12T22:30:20", "client_ip": "127.0.0.1", "text_preview": "What an idiot, shut up.", "label": "offensive", "confidence": 0.9632, "flagged": true, "latency_ms": 3.97}
+{"timestamp": "2026-06-12T22:31:14", "client_ip": "127.0.0.1", "text_preview": "People like you don't belong here.", "label": "hate_speech", "confidence": 0.9012, "flagged": true, "latency_ms": 4.22}
+{"timestamp": "2026-06-12T22:32:41", "client_ip": "127.0.0.1", "text_preview": "What an idiot, shut up.", "label": "offensive", "confidence": 0.9632, "flagged": true, "latency_ms": 14.45}
+{"timestamp": "2026-06-12T22:32:47", "client_ip": "127.0.0.1", "text_preview": "Thanks for the great tutorial!", "label": "neutral", "confidence": 0.9204, "flagged": false, "latency_ms": 17.28}
+{"timestamp": "2026-06-12T22:54:51", "client_ip": "127.0.0.1", "text_preview": "What an idiot, shut up.", "label": "offensive", "confidence": 0.9632, "flagged": true, "latency_ms": 22.53}
+{"timestamp": "2026-06-12T22:54:56", "client_ip": "127.0.0.1", "text_preview": "What an idiot, shut up.", "label": "offensive", "confidence": 0.9632, "flagged": true, "latency_ms": 10.62}
+{"timestamp": "2026-06-12T23:00:00", "client_ip": "127.0.0.1", "text_preview": "fuck off", "label": "neutral", "confidence": 0.3661, "flagged": false, "latency_ms": 95.44}
+{"timestamp": "2026-06-12T23:00:09", "client_ip": "127.0.0.1", "text_preview": "fuck off", "label": "neutral", "confidence": 0.3661, "flagged": false, "latency_ms": 13.81}
+{"timestamp": "2026-06-12T23:00:21", "client_ip": "127.0.0.1", "text_preview": "bitch", "label": "neutral", "confidence": 0.3661, "flagged": false, "latency_ms": 15.77}
+{"timestamp": "2026-06-12T23:04:24", "client_ip": "127.0.0.1", "text_preview": "People like you don't belong here.", "label": "hate_speech", "confidence": 0.9012, "flagged": true, "latency_ms": 6.0}
+{"timestamp": "2026-06-12T23:04:46", "client_ip": "127.0.0.1", "text_preview": "your entire group is inferior and dangerous wow,hate_speech,2", "label": "hate_speech", "confidence": 0.964, "flagged": true, "latency_ms": 15.76}
+{"timestamp": "2026-06-12T23:05:32", "client_ip": "127.0.0.1", "text_preview": "violence against them is justified wow", "label": "hate_speech", "confidence": 0.9593, "flagged": true, "latency_ms": 14.89}
+{"timestamp": "2026-06-12T23:05:33", "client_ip": "127.0.0.1", "text_preview": "violence against them is justified wow", "label": "hate_speech", "confidence": 0.9593, "flagged": true, "latency_ms": 15.54}
+{"timestamp": "2026-06-15T18:15:37", "client_ip": "127.0.0.1", "text_preview": "gfkmlb;lr", "label": "neutral", "confidence": 0.2692, "flagged": false, "latency_ms": 65.08}
+{"timestamp": "2026-06-15T19:41:16", "client_ip": "127.0.0.1", "text_preview": "People like you don't belong here.", "label": "hate_speech", "confidence": 0.2974, "flagged": false, "latency_ms": 145.52}
+{"timestamp": "2026-06-15T23:20:29", "client_ip": "127.0.0.1", "text_preview": "Thanks for the great tutorial!", "label": "neutral", "confidence": 0.3253, "flagged": false, "latency_ms": 508.13}
+{"timestamp": "2026-06-15T23:20:57", "client_ip": "127.0.0.1", "text_preview": "really liked the project", "label": "neutral", "confidence": 0.2996, "flagged": false, "latency_ms": 205.95}
+{"timestamp": "2026-06-15T23:26:43", "client_ip": "127.0.0.1", "text_preview": "People like you don't belong here.", "label": "hate_speech", "confidence": 0.2974, "flagged": false, "latency_ms": 96.89}
+{"timestamp": "2026-06-15T23:29:08", "client_ip": "127.0.0.1", "text_preview": "What an idiot, shut up.", "label": "offensive", "confidence": 0.3271, "flagged": false, "latency_ms": 100.69}
+{"timestamp": "2026-06-15T23:29:53", "client_ip": "127.0.0.1", "text_preview": "this is so stupid it hurts seriously", "label": "offensive", "confidence": 0.3196, "flagged": false, "latency_ms": 53.38}
+{"timestamp": "2026-06-15T23:30:10", "client_ip": "127.0.0.1", "text_preview": "what is this rubbish", "label": "offensive", "confidence": 0.2906, "flagged": false, "latency_ms": 61.86}
+{"timestamp": "2026-06-15T23:30:29", "client_ip": "127.0.0.1", "text_preview": "useless content i have ever seen", "label": "hate_speech", "confidence": 0.277, "flagged": false, "latency_ms": 36.35}
+{"timestamp": "2026-06-15T23:30:45", "client_ip": "127.0.0.1", "text_preview": "didnt like it", "label": "offensive", "confidence": 0.2665, "flagged": false, "latency_ms": 49.44}
+{"timestamp": "2026-06-15T23:30:57", "client_ip": "127.0.0.1", "text_preview": "very nice content", "label": "neutral", "confidence": 0.2823, "flagged": false, "latency_ms": 33.45}
+{"timestamp": "2026-06-15T23:31:15", "client_ip": "127.0.0.1", "text_preview": "very nice content wish i could have said that", "label": "neutral", "confidence": 0.2669, "flagged": false, "latency_ms": 151.95}
+{"timestamp": "2026-06-15T23:31:31", "client_ip": "127.0.0.1", "text_preview": "very nice content i wish i could have said that", "label": "neutral", "confidence": 0.2731, "flagged": false, "latency_ms": 72.68}
+{"timestamp": "2026-06-15T23:31:58", "client_ip": "127.0.0.1", "text_preview": "what dumb content", "label": "offensive", "confidence": 0.2916, "flagged": false, "latency_ms": 51.81}

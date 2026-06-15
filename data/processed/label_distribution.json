@@ -1,0 +1,20 @@
+{
+  "train": {
+    "toxic": 88,
+    "neutral": 88,
+    "hate_speech": 87,
+    "offensive": 87
+  },
+  "val": {
+    "hate_speech": 19,
+    "toxic": 19,
+    "offensive": 19,
+    "neutral": 18
+  },
+  "test": {
+    "neutral": 19,
+    "hate_speech": 19,
+    "offensive": 19,
+    "toxic": 18
+  }
+}

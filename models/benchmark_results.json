@@ -1,0 +1,23 @@
+{
+  "texts_count": 8,
+  "benchmark_texts": [
+    "Thanks for the helpful tutorial!",
+    "You are an idiot and nobody likes you.",
+    "People like you don't belong here.",
+    "This movie was pretty good overall.",
+    "Shut up moron, learn to read.",
+    "Looking forward to the team meeting tomorrow.",
+    "I hope something bad happens to your family.",
+    "Great presentation, well done everyone."
+  ],
+  "pytorch": {
+    "single_mean_ms": 50.39,
+    "single_median_ms": 50.45,
+    "single_p95_ms": 61.19,
+    "single_p99_ms": 67.37,
+    "batch_mean_ms": 157.81,
+    "batch_per_item_ms": 19.73,
+    "warmup_runs": 5,
+    "timed_runs": 30
+  }
+}

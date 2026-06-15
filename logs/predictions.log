@@ -1,0 +1,31 @@
+2026-06-12 22:30:11,829 | INFO | Model loaded (backend=baseline)
+2026-06-12 22:30:20,676 | INFO | {"timestamp": "2026-06-12T22:30:20", "client_ip": "127.0.0.1", "text_preview": "What an idiot, shut up.", "label": "offensive", "confidence": 0.9632, "flagged": true, "latency_ms": 3.97}
+2026-06-12 22:31:14,010 | INFO | {"timestamp": "2026-06-12T22:31:14", "client_ip": "127.0.0.1", "text_preview": "People like you don't belong here.", "label": "hate_speech", "confidence": 0.9012, "flagged": true, "latency_ms": 4.22}
+2026-06-12 22:32:41,426 | INFO | {"timestamp": "2026-06-12T22:32:41", "client_ip": "127.0.0.1", "text_preview": "What an idiot, shut up.", "label": "offensive", "confidence": 0.9632, "flagged": true, "latency_ms": 14.45}
+2026-06-12 22:32:47,271 | INFO | {"timestamp": "2026-06-12T22:32:47", "client_ip": "127.0.0.1", "text_preview": "Thanks for the great tutorial!", "label": "neutral", "confidence": 0.9204, "flagged": false, "latency_ms": 17.28}
+2026-06-12 22:54:51,415 | INFO | {"timestamp": "2026-06-12T22:54:51", "client_ip": "127.0.0.1", "text_preview": "What an idiot, shut up.", "label": "offensive", "confidence": 0.9632, "flagged": true, "latency_ms": 22.53}
+2026-06-12 22:54:56,756 | INFO | {"timestamp": "2026-06-12T22:54:56", "client_ip": "127.0.0.1", "text_preview": "What an idiot, shut up.", "label": "offensive", "confidence": 0.9632, "flagged": true, "latency_ms": 10.62}
+2026-06-12 23:00:00,789 | INFO | {"timestamp": "2026-06-12T23:00:00", "client_ip": "127.0.0.1", "text_preview": "fuck off", "label": "neutral", "confidence": 0.3661, "flagged": false, "latency_ms": 95.44}
+2026-06-12 23:00:09,114 | INFO | {"timestamp": "2026-06-12T23:00:09", "client_ip": "127.0.0.1", "text_preview": "fuck off", "label": "neutral", "confidence": 0.3661, "flagged": false, "latency_ms": 13.81}
+2026-06-12 23:00:21,857 | INFO | {"timestamp": "2026-06-12T23:00:21", "client_ip": "127.0.0.1", "text_preview": "bitch", "label": "neutral", "confidence": 0.3661, "flagged": false, "latency_ms": 15.77}
+2026-06-12 23:04:24,827 | INFO | {"timestamp": "2026-06-12T23:04:24", "client_ip": "127.0.0.1", "text_preview": "People like you don't belong here.", "label": "hate_speech", "confidence": 0.9012, "flagged": true, "latency_ms": 6.0}
+2026-06-12 23:04:46,126 | INFO | {"timestamp": "2026-06-12T23:04:46", "client_ip": "127.0.0.1", "text_preview": "your entire group is inferior and dangerous wow,hate_speech,2", "label": "hate_speech", "confidence": 0.964, "flagged": true, "latency_ms": 15.76}
+2026-06-12 23:05:32,217 | INFO | {"timestamp": "2026-06-12T23:05:32", "client_ip": "127.0.0.1", "text_preview": "violence against them is justified wow", "label": "hate_speech", "confidence": 0.9593, "flagged": true, "latency_ms": 14.89}
+2026-06-12 23:05:33,820 | INFO | {"timestamp": "2026-06-12T23:05:33", "client_ip": "127.0.0.1", "text_preview": "violence against them is justified wow", "label": "hate_speech", "confidence": 0.9593, "flagged": true, "latency_ms": 15.54}
+2026-06-15 17:38:10,596 | INFO | Model loaded (backend=baseline)
+2026-06-15 17:51:16,274 | INFO | Model loaded (backend=onnx)
+2026-06-15 18:15:37,237 | INFO | {"timestamp": "2026-06-15T18:15:37", "client_ip": "127.0.0.1", "text_preview": "gfkmlb;lr", "label": "neutral", "confidence": 0.2692, "flagged": false, "latency_ms": 65.08}
+2026-06-15 19:39:26,392 | INFO | Model loaded (backend=onnx)
+2026-06-15 19:41:16,193 | INFO | {"timestamp": "2026-06-15T19:41:16", "client_ip": "127.0.0.1", "text_preview": "People like you don't belong here.", "label": "hate_speech", "confidence": 0.2974, "flagged": false, "latency_ms": 145.52}
+2026-06-15 23:20:29,047 | INFO | {"timestamp": "2026-06-15T23:20:29", "client_ip": "127.0.0.1", "text_preview": "Thanks for the great tutorial!", "label": "neutral", "confidence": 0.3253, "flagged": false, "latency_ms": 508.13}
+2026-06-15 23:20:57,166 | INFO | {"timestamp": "2026-06-15T23:20:57", "client_ip": "127.0.0.1", "text_preview": "really liked the project", "label": "neutral", "confidence": 0.2996, "flagged": false, "latency_ms": 205.95}
+2026-06-15 23:26:43,446 | INFO | {"timestamp": "2026-06-15T23:26:43", "client_ip": "127.0.0.1", "text_preview": "People like you don't belong here.", "label": "hate_speech", "confidence": 0.2974, "flagged": false, "latency_ms": 96.89}
+2026-06-15 23:29:08,912 | INFO | {"timestamp": "2026-06-15T23:29:08", "client_ip": "127.0.0.1", "text_preview": "What an idiot, shut up.", "label": "offensive", "confidence": 0.3271, "flagged": false, "latency_ms": 100.69}
+2026-06-15 23:29:53,434 | INFO | {"timestamp": "2026-06-15T23:29:53", "client_ip": "127.0.0.1", "text_preview": "this is so stupid it hurts seriously", "label": "offensive", "confidence": 0.3196, "flagged": false, "latency_ms": 53.38}
+2026-06-15 23:30:10,494 | INFO | {"timestamp": "2026-06-15T23:30:10", "client_ip": "127.0.0.1", "text_preview": "what is this rubbish", "label": "offensive", "confidence": 0.2906, "flagged": false, "latency_ms": 61.86}
+2026-06-15 23:30:29,084 | INFO | {"timestamp": "2026-06-15T23:30:29", "client_ip": "127.0.0.1", "text_preview": "useless content i have ever seen", "label": "hate_speech", "confidence": 0.277, "flagged": false, "latency_ms": 36.35}
+2026-06-15 23:30:45,405 | INFO | {"timestamp": "2026-06-15T23:30:45", "client_ip": "127.0.0.1", "text_preview": "didnt like it", "label": "offensive", "confidence": 0.2665, "flagged": false, "latency_ms": 49.44}
+2026-06-15 23:30:57,080 | INFO | {"timestamp": "2026-06-15T23:30:57", "client_ip": "127.0.0.1", "text_preview": "very nice content", "label": "neutral", "confidence": 0.2823, "flagged": false, "latency_ms": 33.45}
+2026-06-15 23:31:15,432 | INFO | {"timestamp": "2026-06-15T23:31:15", "client_ip": "127.0.0.1", "text_preview": "very nice content wish i could have said that", "label": "neutral", "confidence": 0.2669, "flagged": false, "latency_ms": 151.95}
+2026-06-15 23:31:31,273 | INFO | {"timestamp": "2026-06-15T23:31:31", "client_ip": "127.0.0.1", "text_preview": "very nice content i wish i could have said that", "label": "neutral", "confidence": 0.2731, "flagged": false, "latency_ms": 72.68}
+2026-06-15 23:31:58,603 | INFO | {"timestamp": "2026-06-15T23:31:58", "client_ip": "127.0.0.1", "text_preview": "what dumb content", "label": "offensive", "confidence": 0.2916, "flagged": false, "latency_ms": 51.81}
