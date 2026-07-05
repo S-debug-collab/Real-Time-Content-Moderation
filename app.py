@@ -1,17 +1,3 @@
-"""
-app.py
-------
-FastAPI backend for the Real-Time Content Moderation System.
-
-Exposes:
-    POST /predict   -> classify a single comment
-    GET  /health     -> simple health check
-    GET  /            -> serves the frontend (frontend/index.html)
-
-Run with:
-    uvicorn app:app --reload
-"""
-
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
@@ -26,8 +12,6 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Allow the static frontend (served from any origin/port during local dev)
-# to call the API without CORS errors.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -35,7 +19,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load the model once at startup, not per-request.
 predictor: ModerationPredictor | None = None
 
 
@@ -70,7 +53,6 @@ def health():
     return {"status": "ok", "model_loaded": predictor is not None}
 
 
-# Serve the frontend static files (CSS/JS) and the index page.
 app.mount("/static", StaticFiles(directory="frontend"), name="static")
 
 
