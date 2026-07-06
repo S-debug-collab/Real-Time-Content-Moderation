@@ -242,3 +242,55 @@ body {
     font-size: 22px;
   }
 }
+
+
+#status,
+#labels {
+  margin-bottom: 24px;
+}
+
+#status h3,
+#labels h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+#status p,
+#labels p {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+#labels ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+#labels li {
+  margin: 4px 0;
+  color: var(--text-primary);
+}
+
+#prediction-list {
+  margin-top: 16px;
+}
+
+#prediction-list strong {
+  color: var(--text-primary);
+}
+
+#prediction-list span {
+  color: var(--text-muted);
+}
+
+.result h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.result h3 {
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
