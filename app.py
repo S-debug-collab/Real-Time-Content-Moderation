@@ -1,3 +1,5 @@
+from typing import Dict, List
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
@@ -8,8 +10,8 @@ from predict import ModerationPredictor
 
 app = FastAPI(
     title="Real-Time Content Moderation API",
-    description="Classifies user comments as Neutral, Toxic, Offensive, or Hate Speech.",
-    version="1.0.0",
+    description="Predicts probabilities for the six Jigsaw toxicity labels.",
+    version="2.0.0",
 )
 
 app.add_middleware(
@@ -29,28 +31,46 @@ def load_model():
 
 
 class CommentRequest(BaseModel):
-    text: str = Field(..., min_length=1, max_length=2000, examples=["You are stupid"])
+    text: str = Field(
+        ...,
+        min_length=1,
+        max_length=2000,
+        examples=["You are stupid"],
+    )
 
 
 class PredictionResponse(BaseModel):
-    prediction: str
-    confidence: float
+    neutral: bool
+    predicted_labels: List[str]
+    probabilities: Dict[str, float]
 
 
 @app.post("/predict", response_model=PredictionResponse)
 def predict(request: CommentRequest):
+
     if predictor is None:
-        raise HTTPException(status_code=503, detail="Model is still loading, try again shortly.")
+        raise HTTPException(
+            status_code=503,
+            detail="Model is still loading. Try again shortly.",
+        )
+
     if not request.text.strip():
-        raise HTTPException(status_code=400, detail="Text must not be empty.")
+        raise HTTPException(
+            status_code=400,
+            detail="Text must not be empty.",
+        )
 
     result = predictor.predict(request.text)
+
     return PredictionResponse(**result)
 
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "model_loaded": predictor is not None}
+    return {
+        "status": "ok",
+        "model_loaded": predictor is not None,
+    }
 
 
 app.mount("/static", StaticFiles(directory="frontend"), name="static")
