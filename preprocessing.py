@@ -6,7 +6,7 @@ import nltk
 import contractions
 import pandas as pd
 from nltk.corpus import stopwords
-from nltk.stem import PorterStemmer, WordNetLemmatizer
+from nltk.stem import  WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from contractions import contractions_dict
 
@@ -29,7 +29,6 @@ def download_nltk_resources():
 download_nltk_resources()
 
 STOPWORDS = set(stopwords.words("english"))
-STEMMER = PorterStemmer()
 LEMMATIZER = WordNetLemmatizer()
 
 URL_PATTERN = re.compile(r"https?://\S+|www\.\S+")
