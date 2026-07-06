@@ -4,81 +4,204 @@ const textarea = document.getElementById("comment-input");
 const charCount = document.getElementById("char-count");
 const predictBtn = document.getElementById("predict-btn");
 const btnLabel = document.getElementById("btn-label");
+
 const resultBox = document.getElementById("result");
-const resultBadge = document.getElementById("result-badge");
-const resultLabel = document.getElementById("result-label");
-const confidenceValue = document.getElementById("confidence-value");
-const confidenceFill = document.getElementById("confidence-fill");
+const predictionList = document.getElementById("prediction-list");
+const statusDiv = document.getElementById("status");
+const labelsDiv = document.getElementById("labels");
+
 const errorBox = document.getElementById("error");
 
-// Maps each predicted class to a CSS color variable defined in style.css,
-// so the whole badge/bar re-colors itself based on the model's output.
 const CLASS_COLORS = {
-  "Neutral": "var(--neutral)",
-  "Toxic": "var(--toxic)",
-  "Offensive": "var(--offensive)",
-  "Hate Speech": "var(--hate)",
+    toxic: "#FBBF24",
+    severe_toxic: "#EF4444",
+    obscene: "#FB923C",
+    threat: "#DC2626",
+    insult: "#F97316",
+    identity_hate: "#991B1B",
 };
 
 textarea.addEventListener("input", () => {
-  charCount.textContent = `${textarea.value.length} / 2000`;
+    charCount.textContent = `${textarea.value.length} / 2000`;
 });
 
 predictBtn.addEventListener("click", async () => {
-  const text = textarea.value.trim();
 
-  hideError();
+    const text = textarea.value.trim();
 
-  if (!text) {
-    showError("Please enter a comment before analyzing.");
-    return;
-  }
+    hideError();
 
-  setLoading(true);
-
-  try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text }),
-    });
-
-    if (!response.ok) {
-      const body = await response.json().catch(() => ({}));
-      throw new Error(body.detail || `Request failed (${response.status})`);
+    if (!text) {
+        showError("Please enter a comment.");
+        return;
     }
 
-    const data = await response.json();
-    renderResult(data.prediction, data.confidence);
-  } catch (err) {
-    showError(err.message || "Something went wrong. Is the API running?");
-  } finally {
-    setLoading(false);
-  }
+    setLoading(true);
+
+    try {
+
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ text })
+        });
+
+        if (!response.ok) {
+            const body = await response.json().catch(() => ({}));
+            throw new Error(body.detail || "Prediction failed.");
+        }
+
+        const data = await response.json();
+
+        renderResult(data);
+
+    } catch (err) {
+
+        showError(err.message);
+
+    } finally {
+
+        setLoading(false);
+
+    }
+
 });
 
-function renderResult(prediction, confidence) {
-  const color = CLASS_COLORS[prediction] || "var(--text-muted)";
-  document.documentElement.style.setProperty("--current", color);
+function renderResult(data) {
 
-  resultLabel.textContent = prediction;
-  const pct = Math.round(confidence * 100);
-  confidenceValue.textContent = `${pct}%`;
-  confidenceFill.style.width = `${pct}%`;
+    predictionList.innerHTML = "";
+    statusDiv.innerHTML = "";
+    labelsDiv.innerHTML = "";
 
-  resultBox.classList.remove("result--hidden");
+    //------------------------------------------
+    // STATUS
+    //------------------------------------------
+
+    if (data.neutral) {
+
+        statusDiv.innerHTML = `
+            <h3>🟢 Status</h3>
+            <p><strong>Neutral Comment</strong></p>
+        `;
+
+    } else {
+
+        statusDiv.innerHTML = `
+            <h3>🔴 Status</h3>
+            <p><strong>Potentially Toxic</strong></p>
+        `;
+
+    }
+
+    //------------------------------------------
+    // LABELS
+    //------------------------------------------
+
+    if (data.predicted_labels.length === 0) {
+
+        labelsDiv.innerHTML = `
+            <h3>Detected Labels</h3>
+            <p>None</p>
+        `;
+
+    } else {
+
+        let html = "<h3>Detected Labels</h3><ul>";
+
+        data.predicted_labels.forEach(label => {
+
+            html += `<li>${formatLabel(label)}</li>`;
+
+        });
+
+        html += "</ul>";
+
+        labelsDiv.innerHTML = html;
+
+    }
+
+    //------------------------------------------
+    // PROBABILITIES
+    //------------------------------------------
+
+    const sorted = Object.entries(data.probabilities)
+        .sort((a, b) => b[1] - a[1]);
+
+    sorted.forEach(([label, probability]) => {
+
+        const percent = Math.round(probability * 100);
+
+        const color =
+            CLASS_COLORS[label] || "#38BDF8";
+
+        const div = document.createElement("div");
+
+        div.style.marginBottom = "18px";
+
+        div.innerHTML = `
+            <div style="
+                display:flex;
+                justify-content:space-between;
+                margin-bottom:6px;
+            ">
+
+                <strong>${formatLabel(label)}</strong>
+
+                <span>${percent}%</span>
+
+            </div>
+
+            <div class="result__bar">
+
+                <div
+                    class="result__bar-fill"
+                    style="
+                        width:${percent}%;
+                        background:${color};
+                    ">
+                </div>
+
+            </div>
+        `;
+
+        predictionList.appendChild(div);
+
+    });
+
+    resultBox.classList.remove("result--hidden");
+
+}
+
+function formatLabel(label) {
+
+    return label
+        .replace(/_/g, " ")
+        .replace(/\b\w/g, c => c.toUpperCase());
+
 }
 
 function showError(message) {
-  errorBox.textContent = message;
-  errorBox.classList.remove("error--hidden");
+
+    errorBox.textContent = message;
+    errorBox.classList.remove("error--hidden");
+
 }
 
 function hideError() {
-  errorBox.classList.add("error--hidden");
+
+    errorBox.classList.add("error--hidden");
+
 }
 
 function setLoading(isLoading) {
-  predictBtn.disabled = isLoading;
-  btnLabel.textContent = isLoading ? "Analyzing..." : "Analyze comment";
+
+    predictBtn.disabled = isLoading;
+
+    btnLabel.textContent =
+        isLoading
+            ? "Analyzing..."
+            : "Analyze Comment";
+
 }
